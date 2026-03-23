@@ -28,16 +28,10 @@
             <label for="mensaje">Para: </label>
             <select id="alumno" name="alumno" required>
                 <php?
-
-        for(i=0;i<3;i++){
-        	//Extrae cada una fila del resultado de la consulta
-        	$fila=$resultado->fetch_array();
-                //Ejemplo que muestra un campo
-            echo '<p>';
-            echo 'Id alumno: '.$fila["id_alumno"];
-            echo 'Nombre alumno: '.$fila["nombre"];  
-            echo '</p>';
-    }
+    <while ($fila = $resultado->fetch_Array(){
+                    echo '<option value="' .$fila["idAlumno"]. "'> echo '<option value="' .$fila["nombre"]. "'> - '$fila["idAlumno"].'</option>';
+    }>
+       
                     <!--<option value="compañero1">Compañero 1</option>-->
                 
                 
