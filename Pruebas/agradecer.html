@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
@@ -24,24 +24,6 @@
         </nav>
     
     <form method="GET" action="mostrar_datos.php">
-        <fieldset class="agradecer">
-            <label for="mensaje">Para: </label>
-            <select id="alumno" name="alumno" required>
-                <php?
-
-        for(i=0;i<3;i++){
-        	//Extrae cada una fila del resultado de la consulta
-        	$fila=$resultado->fetch_array();
-                //Ejemplo que muestra un campo
-            echo '<p>';
-            echo 'Id alumno: '.$fila["id_alumno"];
-            echo 'Nombre alumno: '.$fila["nombre"];  
-            echo '</p>';
-    }
-                    <!--<option value="compañero1">Compañero 1</option>-->
-                
-                
-                ?>
                 <!-- <option value="">Compañeros</option>
                 <option value ="compañero1">Compañero 1</option>
                 <option value ="compañero2">Compañero 2</option>
