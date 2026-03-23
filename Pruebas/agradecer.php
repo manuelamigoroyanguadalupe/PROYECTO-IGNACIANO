@@ -1,3 +1,13 @@
+<php?
+    requiere 'configdb.php';
+    
+<while ($fila = $resultado->fetch_Array(){
+                    echo '<option value="' .$fila["idAlumno"]. "'> echo '<option value="' .$fila["nombre"]. "'> - '$fila["idAlumno"].'</option>';
+    }>
+  ?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,15 +37,8 @@
         <fieldset class="agradecer">
             <label for="mensaje">Para: </label>
             <select id="alumno" name="alumno" required>
-                <php?
-    <while ($fila = $resultado->fetch_Array(){
-                    echo '<option value="' .$fila["idAlumno"]. "'> echo '<option value="' .$fila["nombre"]. "'> - '$fila["idAlumno"].'</option>';
-    }>
-       
-                    <!--<option value="compañero1">Compañero 1</option>-->
-                
-                
-                ?>
+    
+              
                 <!-- <option value="">Compañeros</option>
                 <option value ="compañero1">Compañero 1</option>
                 <option value ="compañero2">Compañero 2</option>
