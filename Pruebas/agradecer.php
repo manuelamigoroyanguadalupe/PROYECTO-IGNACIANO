@@ -49,7 +49,7 @@ function selectAgradecer(){
         </nav>
     
     <form method="GET" action="mostrar_datos.php">
-            <select>
+            <select name="usuariosselect" id=" usuariosselect">
                 <option value="0"></option>
                 
             </select><br><br>
