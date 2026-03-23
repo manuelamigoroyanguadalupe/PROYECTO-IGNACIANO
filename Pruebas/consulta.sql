@@ -5,7 +5,7 @@ CREATE TABLE Alumnos (
     Contraseña CHAR(20),
     pagina_web VARCHAR(100) NOT NULL,
     Nombre_jesuita CHAR(30) NOT NULL,
-    Imagen BINARY NOT NULL,
+    Imagen VARBINARY(MAX) NOT NULL,
     Mensaje VARCHAR(150) NOT NULL
 );
 INSERT INTO Alumnos 
