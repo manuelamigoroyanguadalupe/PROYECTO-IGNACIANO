@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 require 'configdb.php';
 
@@ -8,21 +9,24 @@ function conectar(){
     return $conexion;
 }
 
-// Recoger datos del formulario
-$puesto = $_POST['usuariosselect'];
+$id_remitente = $_SESSION['puesto'];
+$id_destinatario = $_POST['usuariosselect'];
 $mensaje = $_POST['mensaje'];
 
-// Conectar para obtener el nombre del alumno seleccionado
 $conexion = conectar();
 
-$sql = "SELECT nombre FROM alumnos WHERE puesto = '$puesto'";
+
+$sql_insert = "INSERT INTO agradecimientos (id_remitente, id_destinatario, mensaje)
+               VALUES ($id_remitente, $id_destinatario, '$mensaje')";
+$conexion->query($sql_insert);
+
+
+$sql = "SELECT nombre FROM alumnos WHERE puesto = $id_destinatario";
 $resultado = $conexion->query($sql);
 
-$fila = $resultado->fetch_assoc();
-$nombre = $fila['nombre'];
+$nombre = $resultado->fetch_assoc()['nombre'];
 
 $conexion->close();
-
 ?>
 
 <!DOCTYPE html>
@@ -42,11 +46,7 @@ $conexion->close();
 <body>
 
 
-    <p>Para:<?php echo $nombre; ?></p>
-
-    <p>Mensaje:<?php echo $mensaje; ?></p>
-    
-
+    <p>Mensaje enviado correctamente</p>
     <br>
     <a href="agradecer.php">Volver</a>
 
