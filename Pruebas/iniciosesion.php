@@ -15,15 +15,15 @@ $sql = "SELECT puesto FROM alumnos
 $resultado = $conexion->query($sql);
 
 if ($resultado->num_rows > 0){
-    $fila = $resultado->fetch_array();
+    $fila = $resultado->fetch_assoc();
 
     $_SESSION['puesto'] = $fila["puesto"];
 
-    echo "Login correcto";
-    header("Location: home.html"); 
+    header("Location: home.html");
+    exit();
 
 } else {
-    echo "Usuario o contraseña incorrectos";
+    echo "Usuario o contraseña incorrectos<br>";
     echo '<a href="ini_ses.html">Volver</a>';
 }
 
