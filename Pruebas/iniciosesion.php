@@ -1,24 +1,31 @@
 <?php
 session_start();
-include 'conexion.php';
+include 'configdb.php';
 
-$usuario=$_POST["usuario"];
-$contrasena=$_POST["contrasena"];
+$conexion = new mysqli(SERVIDOR, USUARIO, PASSWORD, BBDD);
+$conexion->set_charset("utf8");
 
-$sql = 'SELECT idAlumno FROM alumno
-WHERE correo="'.$usuario.'"
-AND contrasena="' .$contrasena. '";';
+$puesto = $_POST["puesto"];
+$contrasena = $_POST["contrasena"];
 
-echo $sql;
-echo '<br/>';
+$sql = "SELECT puesto FROM alumnos 
+        WHERE puesto='$puesto' 
+        AND contrasena='$contrasena'";
 
-$resultado = $conexion->query ($sql);
+$resultado = $conexion->query($sql);
+
 if ($resultado->num_rows > 0){
-  $fila=$resultado->fetch_array();
-  $conexion->close;
+    $fila = $resultado->fetch_array();
 
-  $_SESSION['id] = $fila["idAlumno"];
- 
+    $_SESSION['puesto'] = $fila["puesto"];
+
+    echo "Login correcto";
+    header("Location: home.html"); 
+
+} else {
+    echo "Usuario o contraseña incorrectos";
+    echo '<a href="ini_ses.html">Volver</a>';
 }
 
+$conexion->close();
 ?>
