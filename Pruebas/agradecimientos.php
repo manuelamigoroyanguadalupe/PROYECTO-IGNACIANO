@@ -54,17 +54,6 @@ $resultado = $stmt->get_result();
 
 <body>
 
-<header>
-    <h1>AGRADECE EN COMPAÑIA</h1>
-    <img src="./imagenes/fot1.png" alt="Logo EVG">
-</header>
-
-<nav>
-    <a href="home.html">Home</a>
-    <a href="agradecer.php">Agradecer</a>
-    <a href="agradecimientos.php">Agradecimientos</a>
-    <a href="ini_ses.html">Cerrar sesión</a>
-</nav>
 
 <br><br>
 
