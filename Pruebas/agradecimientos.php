@@ -2,11 +2,6 @@
 session_start();
 require_once 'conexion.php';
 
-// 🔒 Validar sesión
-if (!isset($_SESSION['usuario'])) {
-    header("Location: ini_ses.html");
-    exit();
-}
 
 // 🔹 Obtener el equipo del usuario logueado (receptor)
 $usuario = $_SESSION['usuario'];
